@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="icon" href="Amazon_icon.png" type="image/x-png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="test3.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jwt-decode/3.1.2/jwt-decode.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-logo border">
+                <div class="logo"></div>
+            </div>
+
+            <!-- Deliver to Address -->
+            <div class="nav-address border" onclick="showModal('addressModal')">
+                <p class="add-one">Deliver to</p>
+                <div class="add-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-sec">Pakistan</p>
+                </div>
+            </div>
+
+            <!-- Filter Button -->
+            <div class="nav-filter border" onclick="showModal('filterModal')">
+                <i class="fas fa-filter"></i>
+                <span>Filter</span>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="nav-search">
+                <select class="search-select">
+                    <option>All</option>
+                </select>
+                <input type="text" placeholder="Search Amazon" class="search-input">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            </div>
+
+            <!-- Sign In -->
+            <div class="nav-signin border" onclick="handleAccountClick()">
+                <p><span class="nav-one" id="welcomeText">Hello, sign in</span></p>
+                <p class="nav-second" id="usernameText">Account & List</p>
+            </div>
+
+            <!-- Cart -->
+            <div class="nav-cart border" onclick="showModal('cartModal')">
+                <div class="cart-icon">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart">Cart</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="panal">
+            <div class="panal-all border">
+                <i class="fa-solid fa-bars"></i>
+                <span id="all">All</span>
+            </div>
+            <div class="panal-ops">
+                <a class="ops border" href="#">Today's Deals</a>
+                <a class="ops border" href="#">Customer Service</a>
+                <a class="ops border" href="#">Registry</a>
+                <a class="ops border" href="#">Gift Cards</a>
+                <a class="ops border" href="#">Sell</a>
+                <a class="ops border ops-button" href="#" onclick="showOrderHistory()">
+                    <i class="fas fa-history"></i> Order History
+                </a>
+                <a class="ops border ops-button" href="#" onclick="showTablesModal()">
+                    <i class="fas fa-table"></i> View Tables
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section"></div>
+    <div class="shop-section1">
+        <div class="shop-box" id="shop-box1" data-product-id="1" data-product-name="Gaming accessories"
+            data-product-price="49.99">
+            <h2>Gaming accessories</h2>
+            <div class="box-image" style="background-image: url('box1.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(1)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box2" data-product-id="2" data-product-name="Deals in PCs"
+            data-product-price="599.99">
+            <h2>Deals in PCs</h2>
+            <div class="box-image" style="background-image: url('box2.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(2)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box3" data-product-id="3" data-product-name="Deals on shoes"
+            data-product-price="79.99">
+            <h2>Deals on shoes</h2>
+            <div class="box-image" style="background-image: url('box3.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(3)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box4" data-product-id="4" data-product-name="Dresses Under $30"
+            data-product-price="29.99">
+            <h2>Dresses Under $30</h2>
+            <div class="box-image" style="background-image: url('box4.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(4)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box5" data-product-id="5" data-product-name="Deals in Clothes"
+            data-product-price="39.99">
+            <h2>Deals in Clothes</h2>
+            <div class="box-image" style="background-image: url('box5.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(5)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box6" data-product-id="6" data-product-name="Toys under $25"
+            data-product-price="24.99">
+            <h2>Toys under $25</h2>
+            <div class="box-image" style="background-image: url('box6.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(6)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box7" data-product-id="7" data-product-name="Home décor under $50"
+            data-product-price="49.99">
+            <h2>Home décor under $50</h2>
+            <div class="box-image" style="background-image: url('box7.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(7)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box8" data-product-id="8" data-product-name="Beauty Products"
+            data-product-price="34.99">
+            <h2>Beauty Products</h2>
+            <div class="box-image" style="background-image: url('box8.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(8)">Add to Cart</button>
+        </div>
+    </div>
+    <div class="shop-section2">
+        <div class="shop-box-list">
+            <h2>Top Packs for Pakistan</h2>
+            <div class="sec2-image-box">
+                <div class="sec2-imgs" style="background-image: url('li-box1.jpg');"></div>
+                <div class="sec2-imgs" style="background-image: url('libox2.jpg');"></div>
+                <div class="sec2-imgs" style="background-image: url('libox3.jpg');"></div>
+                <div class="sec2-imgs" style="background-image: url('libox4.jpg');"></div>
+                <div class="sec2-imgs" style="background-image: url('libox5.jpg');"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shop-section1">
+        <div class="shop-box" id="shop-box1-2" data-product-id="1" data-product-name="Gaming accessories"
+            data-product-price="49.99">
+            <h2>Gaming accessories</h2>
+            <div class="box-image" style="background-image: url('box1.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(1)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box2-2" data-product-id="2" data-product-name="Deals in PCs"
+            data-product-price="599.99">
+            <h2>Deals in PCs</h2>
+            <div class="box-image" style="background-image: url('box2.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(2)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box3-2" data-product-id="3" data-product-name="Deals on shoes"
+            data-product-price="79.99">
+            <h2>Deals on shoes</h2>
+            <div class="box-image" style="background-image: url('box3.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(3)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box4-2" data-product-id="4" data-product-name="Dresses Under $30"
+            data-product-price="29.99">
+            <h2>Dresses Under $30</h2>
+            <div class="box-image" style="background-image: url('box4.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(4)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box5-2" data-product-id="5" data-product-name="Deals in Clothes"
+            data-product-price="39.99">
+            <h2>Deals in Clothes</h2>
+            <div class="box-image" style="background-image: url('box5.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(5)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box6-2" data-product-id="6" data-product-name="Toys under $25"
+            data-product-price="24.99">
+            <h2>Toys under $25</h2>
+            <div class="box-image" style="background-image: url('box6.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(6)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box7-2" data-product-id="7" data-product-name="Home décor under $50"
+            data-product-price="49.99">
+            <h2>Home décor under $50</h2>
+            <div class="box-image" style="background-image: url('box7.jpg');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(7)">Add to Cart</button>
+        </div>
+        <div class="shop-box" id="shop-box8-2" data-product-id="8" data-product-name="Beauty Products"
+            data-product-price="34.99">
+            <h2>Beauty Products</h2>
+            <div class="box-image" style="background-image: url('box8.png');"></div>
+            <input type="number" class="quantity-input" min="1" value="1">
+            <button class="box-a" onclick="addToCart(8)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="button" onclick="handleLogin()">Sign In</button>
+            </form>
+            <p style="text-align:center; margin-top:15px;">
+                New to Amazon? <a href="#" onclick="toggleAuthForms()">Create an Account</a>
+            </p>
+            <div id="loginError" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('logoutModal')">&times;</span>
+            <h2>Account Options</h2>
+            <button onclick="logout()">Log Out</button>
+        </div>
+    </div>
+    
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registrationModal')">&times;</span>
+            <h2>Register</h2>
+            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <div id="registrationError" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cartModal')">&times;</span>
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0.00</span></h3>
+            </div>
+            <button id="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div id="addressModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('addressModal')">&times;</span>
+            <h2>Shipping Address</h2>
+            <form id="addressForm">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="text" id="street" placeholder="Street Address" required>
+                <input type="text" id="city" placeholder="City" required>
+                <input type="text" id="zip" placeholder="Zip Code" required>
+                <select id="country" required>
+                    <option value="">Select Country</option>
+                    <option value="Pakistan">Pakistan</option>
+                    <option value="United States">United States</option>
+                </select>
+                <button type="button" onclick="saveAddressAndContinue()">Continue to Payment</button>
+            </form>
+            <div id="addressError" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('paymentModal')">&times;</span>
+            <h2>Payment</h2>
+            <form id="paymentForm">
+                <select id="paymentMethod" required>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="PayPal">PayPal</option>
+                </select>
+                <input type="text" id="cardNumber" placeholder="Card Number" required>
+                <input type="text" id="expiryDate" placeholder="Expiry Date (MM/YY)" required>
+                <input type="text" id="cvv" placeholder="CVV" required>
+                <button type="button" onclick="completeCheckout()">Complete Purchase</button>
+            </form>
+            <div id="paymentError" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('filterModal')">&times;</span>
+            <h2>Filter Products</h2>
+            <input type="number" placeholder="Min Price" id="minPrice">
+            <input type="number" placeholder="Max Price" id="maxPrice">
+            <select id="categoryFilter">
+                <option>All Categories</option>
+                <option>Electronics</option>
+                <option>Clothing</option>
+                <option>Books</option>
+            </select>
+            <button onclick="applyFilters()">Apply Filters</button>
+        </div>
+    </div>
+
+    <!-- Order History Modal -->
+    <div id="orderHistoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('orderHistoryModal')">&times;</span>
+            <h2>Your Order History</h2>
+            <div id="orderHistoryContent"></div>
+        </div>
+    </div>
+
+    <!-- Tables Modal -->
+    <div id="tablesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('tablesModal')">&times;</span>
+            <h2>View Database Tables</h2>
+            <select id="tableSelector" class="table-select-modal">
+                <option value="users">Users</option>
+                <option value="products">Products</option>
+                <option value="addresses">Addresses</option>
+                <option value="orders">Orders</option>
+                <option value="order_items">Order Items</option>
+                <option value="payments">Payments</option>
+            </select>
+            <div id="tableContent"></div>
+            <button onclick="loadTableData()" class="box-a">Load Table</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="foot-panal1">
+            <a class="panal1-a" href="#">Back to Top</a>
+        </div>
+        <div class="foot-panal2">
+            <ul>
+                <p>Get to Know Us</p>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>About Amazon</a>
+                <a>Investor Relations</a>
+                <a>Amazon Devices</a>
+                <a>Amazon Sciences</a>
+            </ul>
+            <ul>
+                <p>Make Money with Us</p>
+                <a>Sell products on Amazon</a>
+                <a>Sell on Amazon Business</a>
+                <a>Sell apps on Amazon</a>
+                <a>Become an Affiliate</a>
+                <a>Advertise Your Products</a>
+                <a>Self-Publish with Us</a>
+                <a>Host an Amazon Hub</a>
+                <a>› See More Make Money with Us</a>
+            </ul>
+            <ul>
+                <p>Amazon Payment Products</p>
+                <a>Amazon Business Card</a>
+                <a>Shop with Points</a>
+                <a>Reload Your Balance</a>
+                <a>Amazon Currency Converter</a>
+            </ul>
+            <ul>
+                <p>Let Us Help You</p>
+                <a>Amazon and COVID-19</a>
+                <a>Your Account</a>
+                <a>Your Orders</a>
+                <a>Shipping Rates & Policies</a>
+                <a>Returns & Replacements</a>
+                <a>Manage Your Content and Devices</a>
+                <a>Help</a>
+            </ul>
+        </div>
+        <div class="foot-panal3">
+            <div id="foot-logo"></div>
+            <div class="panal3-box1">
+                <i class="fa-solid fa-globe"></i>
+                <span class="panal3-box1-s">English</span>
+                <i class="fa-solid fa-up-down"></i>
+            </div>
+            <div class="panal3-box2">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <span class="panal3-box2-s">USD-U.S. Dollar</span>
+            </div>
+            <div class="panal3-box3">
+                <i class="fa-solid fa-flag-usa"></i>
+                <span class="panal3-box2-s">United States</span>
+            </div>
+        </div>
+        <div class="foot-panal4">
+            <div class="pages">
+                <a>Conditions of Use</a>
+                <a>Privacy Notice</a>
+                <a>Your Ads Privacy Choices</a>
+            </div>
+            <p class="copyright">© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+        </div>
+    </footer>
+    <!-- in <head> or just before test3.js: -->
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.min.js"></script>
+    <script src="test3.js"></script>
+</body>
+
+</html>

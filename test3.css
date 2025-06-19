@@ -1,0 +1,508 @@
+*{
+    font-family: Arial;
+    margin: 0;
+    border: border-box;
+}
+.navbar{
+    height: 60px;
+    background-color: #0f1111;
+    color: #ffffff;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+
+}
+/* box 1 */
+.nav-logo{
+    height: 50px;
+    width: 113px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.logo{
+    background-image: url("amazon1.png");
+    background-size: cover;
+    height: 30px;
+    width: 100px;
+}
+.border{
+    border: 2px solid transparent;
+}
+.border:hover{
+    border: 2px solid white;
+    border-radius: 4px;
+}
+/* box 2 */
+.nav-address{
+    width: 92.4px;
+    margin-left: 5px;
+    padding-left: 10px;
+    height: 50px;
+    align-content: center;
+}
+.add-one{
+    color: #cccccc;
+    font-size: 0.85rem;
+    padding-left: 15px;
+}
+.add-sec{
+    font: size 1rem; ;
+    padding-left: 3px;
+}
+.add-icon{
+    display: flex;
+    align-items:center;
+}
+/* box 3 */
+.nav-search{
+    display: flex;
+    justify-content: space-evenly;
+    width: 850px;
+    height: 40px;
+    border-radius: 4px;
+    background-color:#0f1111;
+}
+.nav-search:hover{
+     border: 2px solid orange;
+}
+.search-icon{
+    height: 40px;
+    width: 50px;
+    color: #0f1111;
+    background-color:rgb(255, 171, 4) ;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.search-input{
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+.search-select{
+    width: 60px;
+    background-color: #d4d4d4;
+    border: none;
+    color: #555;
+    font-size: 1rem; 
+    padding: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+/* box 4 & 5 */
+.nav-signin{
+    height: 50px;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 5px ;
+}
+.nav-return{
+    height: 50px;
+    align-content: center;
+    padding-left: 10px;
+    padding-right: 5px ;
+}
+.nav-one{
+    font-size:  0.7rem; ;
+}
+.nav-second{
+    font-size: 0.8rem;
+    font-weight:700;
+    background-color: #0f1111;
+    border: none;
+    color: #ffffff;
+}
+/* box 5 */
+.nav-cart{
+    height: 50px;
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-icon{
+    font-size: 1.5rem;
+}
+#cart{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+/* panal */
+.panal{
+    height: 40px;
+    background-color: #222f3d;
+    display: flex;
+    align-items: center;
+}
+.panal-all{
+    height: 38px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding-left: 10px;
+    font-size: 1.2rem;
+}
+.ops{
+    color: #ffffff;
+    text-decoration: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 1rem;
+}
+#all{
+    padding-left: 5px;
+}
+/* Heero section */
+.hero-section{
+    background-image: url("background.jpg");
+    background-size:cover;
+    height: 400px;
+}
+/* shop-secction1 */
+.shop-section1{
+    padding-top: 20px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap ;
+    background-color: #e4e1ce;
+    height: 870px;
+}
+.shop-box{
+    padding-top: 15px;
+    padding-left: 20px;
+    height: 400px;
+    width: 22%;
+    background-color: white;
+}
+.box-image{
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 280px;
+    background-size: cover;
+}
+.box-a {
+    text-decoration: none;
+    font-size: 1rem;
+    color:#007185;
+}
+/* shop-section2 */
+.shop-section2{
+    background-color: #e4e1ce;
+    height: 280px;
+}
+.shop-box-list{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    height: 240px;
+    background-color: white;
+}
+.sec2-image-box{
+    padding-top: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sec2-imgs{
+    height: 200px;
+    width: 200px;
+    background-size: cover;
+}
+/* footer */
+.foot-panal1{
+    background-color: #37475a;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.panal1-a{
+    text-decoration:none ;
+    color:#ffffff;
+    font-size: .85rem ;
+}
+.foot-panal2{
+    display: flex;
+    justify-content: center;
+    text-indent: 60px;
+    background-color: #222f3d;
+    color: white;
+    text-decoration: solid;
+    height: 300px ;
+    padding-top: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+}
+ul a{
+    display:block;
+    font-size: 0.8rem;
+    text-decoration: none;
+    font-weight: 200;
+    color:#DDDDDD;
+    margin-top: 10px;
+}
+.foot-panal3{
+    color: #cccccc;
+    background-color: #222f3d;
+    border-top: 0.5px solid #DDDDDD;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#foot-logo{
+    background-image: url("amazon1.png");
+    background-size: cover;
+    height: 30px;
+    width: 100px;
+}
+.panal3-box1-s{
+    padding-left: 5px;
+    padding-right: 20px;
+}
+.panal3-box1{
+    margin-left: 100px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 120px;
+}
+.panal3-box2{
+    margin-left: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 160px;
+}
+.panal3-box2-s{
+    padding-left: 5px;
+}
+
+.panal3-box3{
+    margin-left: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 140px;
+}
+.foot-panal4{
+    background-color: #0f1111;
+    color: #DDDDDD;
+    height: 80px;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.pages{
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    text-indent: 40px;
+}
+.copyright{
+    padding-top: 5px;
+    
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
+.cart-total {
+    padding: 20px 0;
+    border-top: 2px solid #ddd;
+    margin-top: 15px;
+}
+/* Filter Styles */
+.nav-filter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-select, #minPrice, #maxPrice {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    height: 40px;
+}
+
+#minPrice, #maxPrice {
+    width: 100px;
+}
+/* Payment Styles */
+.payment-methods {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #666;
+}
+
+#paymentForm input {
+    margin: 10px 0;
+}
+
+/* Filter Button */
+.nav-filter {
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Cart Items */
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Add to test2.css */
+/* Ensure modals are hidden by default */
+.modal {
+    display: none !important; /* Force override any conflicting styles */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000; /* Extreme value to ensure it's on top */
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 5px;
+    animation: modalOpen 0.3s ease-out;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.navbar {
+    position: relative;
+    z-index: 1; /* Ensure navbar is above other content */
+}
+
+@keyframes modalOpen {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* Prevent background scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+.modal[style*="display: block"] {
+    display: block !important;
+}
+
+/* Add to the end of the CSS file */
+.ops-button {
+    background-color: #FFD814;
+    color: #0F1111 !important;
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.ops-button:hover {
+    background-color: #F7CA00;
+    text-decoration: none;
+}
+
+.table-select-modal select {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 2px solid #FFD814;
+    border-radius: 8px;
+}
+
+/* Add these styles at the end */
+.modal-content {
+    max-width: 80%;
+    max-height: 80vh; /* 80% of viewport height */
+    overflow: auto;
+}
+
+/* Table styling */
+.sql-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+.sql-table th, .sql-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.sql-table th {
+    background-color: #f7ca00;
+    color: #0F1111;
+    position: sticky;
+    top: 0;
+}
+
+.table-container {
+    max-height: 60vh;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+#logoutModal .modal-content {
+    max-width: 300px;
+    padding: 20px;
+}
+
+#logoutModal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD814;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
