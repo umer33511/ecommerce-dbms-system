@@ -2,7 +2,7 @@
 
 A complete full-stack implementation for learning database management systems (DBMS) and web development. Built with vanilla JavaScript for maximum educational value.
 
-Developed by : # MOHAMMAD MUSA ALI | MUHAMMAD UMER | SAROSH ISHAQ
+Developed by : **MOHAMMAD MUSA ALI | MUHAMMAD UMER | SAROSH ISHAQ**
 
 ## 🚀 Features
 
